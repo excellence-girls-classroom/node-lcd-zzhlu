@@ -2,7 +2,9 @@ var lcd = require('./lcd');
 
 function printLcdString(number) {
 
-    var lcdDigits = lcd.buildLcdDigits(lcd.buildSplitNumbers(number), lcd.loadAllDigitsLcdStrings());
+    var splitNumbers = lcd.buildSplitNumbers(number);
+    var allDigitsLcdStrings = lcd.loadAllDigitsLcdStrings();
+    var lcdDigits = lcd.buildLcdDigits(splitNumbers, allDigitsLcdStrings);
     var lcdString = lcd.generateLcdString(lcdDigits);
 
     console.log(lcdString);
